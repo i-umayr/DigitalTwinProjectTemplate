@@ -25,6 +25,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/project-styles.css" />
+
+    <!-- ============================================
+         MAIN WEBSITE URL - CHANGE HERE ONLY
+         ============================================ -->
+    <script>
+      const MAIN_SITE_URL = "https://i-umayr.github.io/DigitalTwinWebsite";
+    </script>
   </head>
   <body>
     <!-- ==========================================
@@ -32,10 +39,7 @@
          ========================================== -->
     <nav class="nav">
       <div class="nav__container">
-        <a
-          href="https://i-umayr.github.io/DigitalTwinWebsite/"
-          class="nav__logo"
-        >
+        <a href="#" class="nav__logo" data-link="home">
           <div class="nav__logo-icon">
             <svg
               viewBox="0 0 24 24"
@@ -63,19 +67,9 @@
         </a>
         <ul class="nav__links">
           <li>
-            <a
-              href="https://i-umayr.github.io/DigitalTwinWebsite/#projects"
-              class="nav__link"
-              >All Projects</a
-            >
+            <a href="#" class="nav__link" data-link="projects">All Projects</a>
           </li>
-          <li>
-            <a
-              href="https://i-umayr.github.io/DigitalTwinWebsite/#contact"
-              class="nav__link"
-              >Contact</a
-            >
-          </li>
+          <li><a href="#" class="nav__link" data-link="contact">Contact</a></li>
           <li>
             <a
               href="https://sy1990.github.io/diim-lab/"
@@ -94,10 +88,7 @@
          ========================================== -->
     <section class="project-hero">
       <div class="project-hero__container">
-        <a
-          href="https://i-umayr.github.io/DigitalTwinWebsite/#projects"
-          class="project-hero__back"
-        >
+        <a href="#" class="project-hero__back" data-link="projects">
           <svg
             fill="none"
             stroke="currentColor"
@@ -341,9 +332,7 @@
             We're looking for industry partners and collaborators to help bring
             this research into real-world applications. If you're interested in
             working with us, please
-            <a href="https://i-umayr.github.io/DigitalTwinWebsite/#contact"
-              >get in touch</a
-            >.
+            <a href="#" data-link="contact">get in touch</a>.
           </p>
         </section>
       </div>
@@ -354,10 +343,7 @@
          ========================================== -->
     <footer class="footer">
       <div class="footer__content">
-        <a
-          href="https://i-umayr.github.io/DigitalTwinWebsite/"
-          class="footer__logo"
-        >
+        <a href="#" class="footer__logo" data-link="home">
           <div class="nav__logo-icon">
             <svg
               viewBox="0 0 24 24"
@@ -418,5 +404,28 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- ==========================================
+         URL RESOLVER - Sets all dynamic links
+         Uses MAIN_SITE_URL defined at top of page
+         ========================================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Map data-link values to URL paths
+        const linkMap = {
+          home: "/",
+          projects: "/#projects",
+          contact: "/#contact",
+        };
+
+        // Find all elements with data-link attribute and set href
+        document.querySelectorAll("[data-link]").forEach(function (el) {
+          const linkType = el.getAttribute("data-link");
+          if (linkMap[linkType]) {
+            el.href = MAIN_SITE_URL + linkMap[linkType];
+          }
+        });
+      });
+    </script>
   </body>
 </html>
