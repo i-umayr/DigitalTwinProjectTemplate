@@ -203,9 +203,24 @@
         <!-- ========================================
                  GALLERY (Optional)
                  UPDATE: Add 2-4 images showing your work
+
+                 TWO LAYOUT OPTIONS — use whichever fits your images:
+
+                 OPTION A (default): 3-column grid
+                 Best for: photos, screenshots, result images
+                 that look good cropped to a square/landscape thumbnail.
+
+                 OPTION B: Full-width stacked layout
+                 Best for: wide diagrams, flowcharts, or figures from
+                 a paper that need to be shown at full width to be readable.
+                 To use Option B: delete Option A below, uncomment Option B,
+                 and add the .gallery-diagram CSS shown inside the comment
+                 to your project-styles.css.
                  ======================================== -->
         <section class="project-section">
           <h2>Gallery</h2>
+
+          <!-- OPTION A: 3-column photo grid (DEFAULT) -->
           <div class="project-gallery">
             <div class="project-gallery__item">
               <img src="images/gallery-1.png" alt="Description of image 1" />
@@ -217,6 +232,45 @@
               <img src="images/gallery-3.png" alt="Description of image 3" />
             </div>
           </div>
+
+          <!-- OPTION B: Full-width diagram layout (for paper figures / flowcharts)
+               DELETE Option A above and UNCOMMENT this block to use.
+               Also add this to your project-styles.css:
+
+               .gallery-diagram {
+                 border-radius: 16px;
+                 overflow: hidden;
+                 background: #f8fafc;
+                 border: 1px solid #e2e8f0;
+                 padding: 1.5rem;
+               }
+               .gallery-diagram img {
+                 width: 100%;
+                 height: auto;
+                 display: block;
+               }
+               .gallery-diagram figcaption {
+                 font-size: 0.85rem;
+                 color: #64748b;
+                 text-align: center;
+                 margin-top: 0.75rem;
+               }
+
+          <div class="project-gallery" style="grid-template-columns: 1fr; gap: 1.5rem;">
+            <figure class="gallery-diagram">
+              <img src="images/gallery-1.png" alt="Description of image 1" />
+              <figcaption>Fig. 1 — Caption for your first diagram.</figcaption>
+            </figure>
+            <figure class="gallery-diagram">
+              <img src="images/gallery-2.png" alt="Description of image 2" />
+              <figcaption>Fig. 2 — Caption for your second diagram.</figcaption>
+            </figure>
+            <figure class="gallery-diagram">
+              <img src="images/gallery-3.png" alt="Description of image 3" />
+              <figcaption>Fig. 3 — Caption for your third diagram.</figcaption>
+            </figure>
+          </div>
+          -->
         </section>
 
         <!-- ========================================
